@@ -1,0 +1,40 @@
+PROBLÈME DE CONCEPTION - exercice-7/index.js
+=============================================
+
+PROBLÈME IDENTIFIÉ : Violation du principe de responsabilité unique (SRP)
+-------------------------------------------------------------------------
+
+La classe `ContentForm` mélange plusieurs responsabilités qui devraient être séparées :
+
+1. GESTION DU FORMULAIRE (responsabilité légitime)
+   - Récupération des valeurs des champs (#searchInput, #contentInput)
+   - Gestion de l'événement submit
+
+2. MANIPULATION DU DOM / UI (responsabilité qui devrait être séparée)
+   - Affichage/masquage de la modal (lignes 20-21, 32-33)
+   - Scroll vers une section (ligne 24)
+   - Injection du HTML dans la section #gemini-answer (ligne 26)
+
+3. APPEL API / LOGIQUE MÉTIER (responsabilité qui devrait être séparée)
+   - Communication avec l'API Gemini (lignes 15-18)
+   - Construction du prompt (lignes 37-39)
+
+
+CONSÉQUENCES DE CE PROBLÈME
+---------------------------
+- Code difficile à tester unitairement
+- Couplage fort entre la logique métier et l'interface
+- Difficile à maintenir et à faire évoluer
+- Réutilisation impossible de la logique d'appel API
+
+
+SOLUTION RECOMMANDÉE
+--------------------
+Séparer en plusieurs classes/modules :
+
+1. ContentForm       -> Gestion du formulaire uniquement
+2. UIManager         -> Gestion de l'affichage (modal, scroll, rendu)
+3. GeminiService     -> Communication avec l'API Gemini
+4. SEOPromptBuilder  -> Construction des prompts SEO
+
+Chaque classe aurait ainsi une seule raison de changer.

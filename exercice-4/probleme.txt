@@ -1,0 +1,29 @@
+PROBLÈME DE CONCEPTION - Exercice 4
+=====================================
+
+PROBLÈME IDENTIFIÉ : Violation de l'encapsulation
+
+DESCRIPTION :
+La propriété $username est déclarée comme "private" dans le constructeur,
+ce qui signifie qu'elle n'est accessible que depuis l'intérieur de la classe User.
+
+Or, à la ligne 12, le code tente d'accéder directement à cette propriété
+depuis l'extérieur de la classe avec : $user->username
+
+Cela provoquera l'erreur suivante :
+"Fatal error: Cannot access private property User::$username"
+
+SOLUTIONS POSSIBLES :
+
+1. Changer la visibilité en "public" :
+   public function __construct(public string $username)
+
+2. Ajouter un getter (meilleure pratique pour l'encapsulation) :
+   public function getUsername(): string {
+       return $this->username;
+   }
+   Puis utiliser : echo $user->getUsername();
+
+RECOMMANDATION :
+La solution 2 (getter) est préférable car elle respecte le principe
+d'encapsulation de la POO, permettant un contrôle sur l'accès aux données.

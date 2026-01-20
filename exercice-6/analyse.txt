@@ -1,0 +1,37 @@
+ANALYSE DU PROBLÈME DE CONCEPTION - exercice-6/main.c
+====================================================
+
+PROBLÈME IDENTIFIÉ :
+--------------------
+Ligne 5 : Point-virgule erroné après la condition du if
+
+Code problématique :
+    if(argc < 5);
+
+EXPLICATION :
+-------------
+Le point-virgule après "if(argc < 5)" termine l'instruction conditionnelle
+immédiatement. Le bloc de code entre accolades qui suit n'est donc plus
+associé au if et s'exécute systématiquement, quelle que soit la valeur
+de argc.
+
+Le code actuel est interprété comme :
+    if(argc < 5)
+        ;                              // instruction vide (ne fait rien)
+    {
+        printf("Not enough arguments.\n");  // s'exécute TOUJOURS
+    }
+
+CONSÉQUENCE :
+-------------
+Le message "Not enough arguments." s'affiche à chaque exécution du programme,
+même si l'utilisateur fournit suffisamment d'arguments.
+
+CORRECTION :
+------------
+Supprimer le point-virgule après la condition :
+
+    if(argc < 5)
+    {
+        printf("Not enough arguments.\n");
+    }

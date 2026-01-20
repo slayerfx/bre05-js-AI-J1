@@ -1,0 +1,51 @@
+ANALYSE DU PROBLEME DE CONCEPTION - Controller.php
+==================================================
+
+PROBLEME IDENTIFIE
+------------------
+Violation du principe de séparation des responsabilités (Separation of Concerns)
+et non-respect du pattern MVC (Model-View-Controller).
+
+CODE PROBLEMATIQUE
+------------------
+Le Controller contient directement des requêtes SQL :
+
+    $query = $this->db->prepare('SELECT * FROM users');
+    $query->execute($parameters);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+Dans une architecture MVC correcte :
+- Le Controller ne devrait que coordonner les actions
+- Le Model devrait gérer l'accès aux données
+
+CONSEQUENCES
+------------
+1. Couplage fort : Le contrôleur est directement lié à la structure de la BDD
+2. Duplication de code : La requête sera dupliquée si plusieurs contrôleurs en ont besoin
+3. Difficulté de maintenance : Un changement de schéma nécessite de modifier tous les contrôleurs
+4. Testabilité réduite : Impossible de tester le contrôleur sans base de données
+
+SOLUTION RECOMMANDEE
+--------------------
+Créer un Model ou Repository dédié :
+
+// UserRepository.php
+class UserRepository {
+    public function findAll(): array {
+        $query = $this->db->prepare('SELECT * FROM users');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+}
+
+// Controller.php
+class Controller extends AbstractController {
+    public function home(): void {
+        $users = $this->userRepository->findAll();
+    }
+}
+
+PRINCIPE VIOLE
+--------------
+Single Responsibility Principle (SRP) des principes SOLID :
+"Une classe ne devrait avoir qu'une seule raison de changer."
