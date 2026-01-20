@@ -1,0 +1,51 @@
+EXPLICATION DU CODE - Pour le grand public
+==========================================
+
+Ce code est écrit en PHP, un langage de programmation utilisé pour créer des sites web.
+
+QU'EST-CE QUE CE CODE FAIT ?
+----------------------------
+
+Imaginez une fiche d'identité numérique. Ce code permet de :
+
+1. STOCKER des informations sur une personne (prénom et nom)
+2. AFFICHER automatiquement ces informations
+
+COMMENT ÇA MARCHE ?
+-------------------
+
+Le code est divisé en deux parties :
+
+PARTIE 1 : L'outil "Debug" (lignes 1-18)
+C'est comme un assistant automatique. Son rôle est d'afficher toutes les
+informations stockées. Il cherche automatiquement toutes les fonctions
+qui commencent par "get" (qui veut dire "obtenir" en anglais) et affiche
+ce qu'elles retournent.
+
+PARTIE 2 : La classe "Test" (lignes 20-49)
+C'est le modèle de notre fiche d'identité. Elle contient :
+- Un espace pour le prénom (firstName)
+- Un espace pour le nom (lastName)
+- Des fonctions pour lire ces informations (getFirstName, getLastName)
+- Des fonctions pour modifier ces informations (setFirstName, setLastName)
+
+EXEMPLE CONCRET
+---------------
+
+Si on crée une personne avec le prénom "Marie" et le nom "Dupont",
+et qu'on utilise la fonction "print()" de l'outil Debug, le programme
+affichera automatiquement :
+
+Marie
+Dupont
+
+EN RÉSUMÉ
+---------
+
+Ce code est un exemple pédagogique qui montre comment :
+- Organiser des données (prénom, nom)
+- Créer un outil réutilisable pour afficher automatiquement des informations
+- Utiliser les "traits" en PHP (une façon de partager du code entre plusieurs classes)
+
+C'est le genre de code qu'on utilise pour construire des formulaires,
+des profils utilisateurs, ou tout système qui gère des informations personnelles.

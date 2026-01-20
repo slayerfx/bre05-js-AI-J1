@@ -1,0 +1,15 @@
+Ce bout de code sert à démarrer un jeu vidéo. Voici ce qu'il fait étape par étape, expliqué simplement :
+
+1. **Préparation du jeu** : Tout d'abord, il installe les éléments de base, comme la liste des niveaux et le personnage du joueur (qui est placé à une position de départ).
+
+2. **Allumage du système graphique** : Ensuite, il tente d'activer le moteur qui permet d'afficher des images à l'écran (appelé SDL). Si cela échoue, il affiche un message d'erreur et s'arrête. C'est un peu comme s'assurer que la télévision est bien branchée avant de jouer.
+
+3. **Ouverture d'une fenêtre** : Si le moteur démarre bien, le code crée une fenêtre sur votre écran (comme une fenêtre Windows ou Mac) appelée "Example". C'est là que le jeu va s'afficher.
+
+4. **Préparation de la "toile"** : Il récupère la surface de cette fenêtre pour pouvoir dessiner dessus.
+
+5. **Mise en peinture** : Il remplit tout l'intérieur de la fenêtre avec une couleur blanche.
+
+6. **Affichage** : Enfin, il rafraîchit la fenêtre pour montrer le résultat à l'utilisateur.
+
+En résumé, ce code prépare tout ce qu'il faut pour commencer à jouer et affiche une fenêtre blanche vide, prête à accueillir les graphismes du jeu.

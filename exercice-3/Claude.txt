@@ -1,0 +1,34 @@
+EXPLICATION DU CODE - Pour un grand public
+==========================================
+
+Ce code est écrit en C++ et représente le démarrage d'un jeu vidéo.
+Voici ce qu'il fait, étape par étape :
+
+1. CRÉATION DU JEU
+   - Le code prépare une liste de niveaux (comme les différentes étapes d'un jeu)
+   - Il crée un joueur qui commence à une position précise sur l'écran
+   - Il charge tous les niveaux du jeu
+
+2. DÉMARRAGE DU MOTEUR GRAPHIQUE
+   - Le jeu utilise une technologie appelée "SDL" (Simple DirectMedia Layer)
+   - C'est un outil très populaire pour créer des jeux vidéo
+   - Si cette technologie ne démarre pas correctement, un message d'erreur s'affiche
+
+3. CRÉATION DE LA FENÊTRE DU JEU
+   - Une fenêtre de 320x320 pixels est créée (une petite fenêtre carrée)
+   - Le titre de la fenêtre est "Example"
+   - Si la fenêtre ne peut pas être créée, le programme s'arrête
+
+4. PRÉPARATION DE L'AFFICHAGE
+   - Le programme récupère la "surface" de la fenêtre (la zone où on peut dessiner)
+   - Il remplit cette surface en blanc (couleur RGB: 255, 255, 255)
+   - Enfin, il affiche le résultat à l'écran
+
+EN RÉSUMÉ
+---------
+Ce code est le point de départ d'un petit jeu vidéo. Il prépare tout le
+nécessaire pour que le jeu puisse fonctionner : il initialise le joueur,
+charge les niveaux, et crée une fenêtre blanche où le jeu sera affiché.
+
+C'est comme préparer une scène de théâtre avant que les acteurs n'entrent :
+on allume les lumières, on vérifie que tout fonctionne, et on prépare le décor.

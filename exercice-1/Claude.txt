@@ -1,0 +1,47 @@
+EXPLICATION DU CODE - Pour le grand public
+==========================================
+
+Ce code sert à créer une grille sur une page web, comme un damier ou un quadrillage.
+
+QUE FAIT CE CODE ?
+------------------
+Imaginez une feuille de papier quadrillé : ce code dessine automatiquement
+toutes les cases de cette grille sur un site web.
+
+COMMENT ÇA MARCHE ?
+-------------------
+1. On lui donne deux nombres :
+   - Le nombre de lignes (rows)
+   - Le nombre de colonnes (cols)
+
+2. Le code parcourt chaque case une par une :
+   - D'abord toutes les cases de la première ligne
+   - Puis toutes les cases de la deuxième ligne
+   - Et ainsi de suite...
+
+3. Pour chaque case, il :
+   - Crée un nouvel élément sur la page web
+   - Lui attribue sa position (quelle ligne, quelle colonne)
+   - Lui donne un numéro unique (0, 1, 2, 3...)
+   - L'ajoute à la page
+
+EXEMPLE CONCRET
+---------------
+Si on appelle initMap(3, 4), le code crée une grille de :
+- 3 lignes
+- 4 colonnes
+- Soit 12 cases au total (numérotées de 0 à 11)
+
+À QUOI ÇA PEUT SERVIR ?
+-----------------------
+Ce type de code est souvent utilisé pour :
+- Des jeux de plateau (échecs, morpion, puzzle)
+- Des calendriers
+- Des galeries d'images
+- Des tableaux de bord
+- Des cartes interactives divisées en zones
+
+EN RÉSUMÉ
+---------
+C'est un outil qui automatise la création d'une grille sur un site web,
+évitant de devoir créer manuellement chaque case une par une.
